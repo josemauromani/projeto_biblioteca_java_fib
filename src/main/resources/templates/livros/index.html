@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Livros</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<h1>Livros</h1>
+	
+	<a class="btn btn-primary" href="/livros/novo" role="button">Cadastrar</a>
+
+
+
+	<hr>
+		
+	<table class="table table-striped">
+		<tr th:each="livro:${listalivros}">
+			<td th:text="${livro.id}"></td>
+			<td th:text="${livro.nome}"></td>
+		</tr>
+	</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>	
+
+</body>
+</html>

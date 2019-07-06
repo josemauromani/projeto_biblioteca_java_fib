@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Livros</title>
+</head>
+<body>
+	<h1>Editar livro</h1>
+	
+	<form method="post" action="/livros/gravar">
+	
+		
+		<input type="hidden" name="id" value="1" />
+		
+		<label for="nome">Nome:</label>
+		<input type="text" name="nome" id="nome" />
+		
+		<hr>
+		
+		<label for="quantidadePaginas">Qtde:</label>
+		<input type="number" name="quantidadePaginas" id="quantidadePaginas" />
+		
+		<hr>
+		
+		<input type="submit" value="Enviar" />
+		
+		<button><a href="/livros/list">Voltar</a></button>
+	
+	</form>
+	
+</body>
+</html>

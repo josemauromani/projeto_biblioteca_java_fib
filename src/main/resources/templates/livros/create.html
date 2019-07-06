@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Livros</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>Cadastro de Livro</h1>
+
+<form method="post" action="/livros/gravar">
+
+  <div class="form-group">
+    <label for="nome">Titulo</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+    <small id="emailHelp" class="form-text text-muted">fuck-off</small>
+  </div>
+  
+  <div class="form-group">
+    <label for="quantidadePaginas">Quantidade</label>
+    <input type="number" class="form-control" id="quantidadePaginas" name="quantidadePaginas">
+    <small id="emailHelp" class="form-text text-muted">fuck off.</small>
+  </div>
+
+
+<select th:object="${livro}" th:field="*{autor}">
+        <option value="">Selecione o Autor</option>
+        <option th:each="autor : ${todosOsAutores}" th:value="${autor.id}" th:utext="${autor.nome} " selected="selected"></option>
+</select>
+
+
+  
+  <button type="submit" class="btn btn-primary">Gravar</button>
+  
+  <a href="/livros/list" class="btn btn-primary">Voltar</a>
+  
+</form>
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+</body>
+</html>
