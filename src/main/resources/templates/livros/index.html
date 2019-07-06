@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="UTF-8" />
 <title>Livros</title>
@@ -17,9 +17,10 @@
 	<hr>
 		
 	<table class="table table-striped">
-		<tr th:each="livro:${listalivros}">
+		<tr th:each="livro:${listaLivros}">
 			<td th:text="${livro.id}"></td>
 			<td th:text="${livro.nome}"></td>
+			<td><a class="btn btn-warning" href="/livros/alterar/" role="button">Editar</a></td>
 		</tr>
 	</table>
 

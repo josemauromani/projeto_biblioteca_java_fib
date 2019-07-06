@@ -16,17 +16,17 @@ public class LivroService {
 	LivroRepository repository;
 	
 	public List<Livro> listaLivros(){
-		return repository.findAll();
+		return this.repository.findAll();
 	}
 	
 	public void salvaLivro(Livro livro) {
-		repository.save(livro);
+		this.repository.save(livro);
 	}
 	
 	public void apagarLivro(Long id) {
 		Optional<Livro> livro = repository.findById(id);
 		if (livro.isPresent()) {
-			repository.delete(livro.get());
+			this.repository.delete(livro.get());
 		}
 	}
 	

@@ -11,6 +11,21 @@
 	<h1>Editar Livro XXX</h1>
 
 
+	<form th:action="@{/livros/gravar}" method="post" th:object="${livro}" action="#" >
+ 
+            <input type="hidden"  th:field="*{id}" />
+
+            Título: <input type="text" th:field="*{nome}"><br/>
+            Autor:
+                <select th:object="${livro}" th:field="*{autor}">
+                    <option value="">Selecione o Autor</option>
+                    <option th:each="autor : ${autores}" th:value="${autor.id}" th:utext="${autor.nome} " selected="selected"></option>
+                </select><br/>
+
+            Total Páginas: <input type="text" th:field="*{quantidadePaginas}" >
+            <input type="submit" value="enviar">
+        </div>
+	</form>
 
 	
 	<a class="btn btn-primary" href="/livros/add" role="button">Editar</a>
